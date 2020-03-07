@@ -1,5 +1,7 @@
 # Loadbalancer with nodejs containers
 
+> using HAProxy
+
 This repo is the implementation of Hussein Nasser's YouTube [tutorial](https://youtu.be/9sAg7RooEDc).
 
 ## Usage
