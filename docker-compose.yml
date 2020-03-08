@@ -1,0 +1,25 @@
+version: '3'
+
+services: 
+    load_balancer:
+        image: haproxy:alpine
+        ports: 
+            - "8080:8080"
+        volumes: 
+            - ./haproxy:/usr/local/etc/haproxy
+        depends_on: 
+            - node1
+            - node2
+            - node3
+    node1:
+        build: app
+        environment:
+            - APP_ID=1
+    node2:
+        build: app
+        environment:
+            - APP_ID=2
+    node3:
+        build: app
+        environment:
+            - APP_ID=3
